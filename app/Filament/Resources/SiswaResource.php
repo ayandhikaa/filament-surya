@@ -23,7 +23,23 @@ class SiswaResource extends Resource
     {
         return $form
             ->schema([
-                //
+                 //card
+            Forms\Components\Card::make()
+            ->schema([
+
+                //name
+                Forms\Components\TextInput::make('nama')
+                  ->label('Nama')
+                  ->placeholder('Masukan nama')
+                  ->required(),
+
+                //description
+                Forms\Components\Textarea::make('alamat')
+                  ->label('alamat')
+                  ->placeholder('Masukan alamat')
+                  ->rows(5)
+                  ->required(),
+            ])
             ]);
     }
 
@@ -31,7 +47,8 @@ class SiswaResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('nama')->searchable(),
+                Tables\Columns\TextColumn::make('alamat'),
             ])
             ->filters([
                 //
