@@ -17,8 +17,8 @@ class SiswaFactory extends Factory
     public function definition(): array
     {
         return [
-            'nama' => fake()->text(),
-            'alamat' => fake()->text(),
+            'nama' => $this->faker->text(50),
+            'alamat' => $this->faker->text(100),
         ];
     }
 }
